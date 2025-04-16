@@ -166,3 +166,9 @@ document.addEventListener("DOMContentLoaded", () => {
     return "I'm not sure how to respond to that yet.";
   }
 });
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./service-worker.js')
+    .then(() => console.log('✅ gChat service worker registered!'))
+    .catch(err => console.error('Service worker error:', err));
+}
